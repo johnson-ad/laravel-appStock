@@ -9,8 +9,8 @@ class PostController extends Controller
     public function index()
     {
         //on peut cree une variable et la mettre une variable dans une vue
-        $title = 'Mon super titre';
-        $title2 = 'Mon super titre 2';
+        // $title = 'Mon super titre';
+        // $title2 = 'Mon super titre 2';
 
 
         // on utilise la fonction compact pour passer des variables a la vue
