@@ -30,9 +30,22 @@ class PostController extends Controller
         /*
         on peut aussi passer plusieur variable dans la vue avec les tableaux        
         */
+        // return view('articles', [
+        //     'title' => $title,
+        //     'title2' => $title2
+        // ]);
+
+        $posts = [
+            "Mon super premier titre",
+            "Mon super deuxième titre"
+        ];
+
+        //passer un tableau dans la vue grace a compact
+        // return view('articles', compact('posts'));
+
+        //passer un tableau dans la vue grace a un tableau
         return view('articles', [
-            'title' => $title,
-            'title2' => $title2
+            'posts' => $posts
         ]);
     }
 }
