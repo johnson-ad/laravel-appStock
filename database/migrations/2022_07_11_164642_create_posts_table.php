@@ -15,7 +15,11 @@ return new class extends Migration
     {
         Schema::create('posts', function (Blueprint $table) {
             $table->id();
+            $table->string('title');
+            $table->mediumText('content');
             $table->timestamps();
+            // $ table permet de définir un nom de table différent pour chaque modèle
+            //le nom de la colonne sont celle definie dans les parenthese
         });
     }
 
