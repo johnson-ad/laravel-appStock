@@ -2,6 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\ProduitController;
+use App\Http\Controllers\CategorieController;
+use App\Http\Controllers\UserController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -24,6 +27,9 @@ Route::get('/', [PostController::class, 'index'])->name('home');
 Route::get('/posts/{id}', [PostController::class, 'show'])->whereNumber('id');
 // on peut mettre un regex pour le parametre id avec whereNumber permet de restreindre l'id a un nombre si passe une chaine de caractere on va voir une erreur
 Route::get('/contact', [PostController::class, 'contact'])->name('contact');
+Route::get('/produit', [ProduitController::class, 'produit'])->name('produit');
+Route::get('/categorie', [CategorieController::class, 'categorie'])->name('categorie');
+Route::get('/user', [UserController::class, 'user'])->name('user');
 
 //reponse format json [ grace a la methode response() ]
 // Route::get('/posts', function () {

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Post;
 use Illuminate\Http\Request;
 
 class PostController extends Controller
@@ -35,10 +36,12 @@ class PostController extends Controller
         //     'title2' => $title2
         // ]);
 
-        $posts = [
-            "Mon super premier titre",
-            "Mon super deuxième titre"
-        ];
+        // $posts = [
+        //     "Mon super premier titre",
+        //     "Mon super deuxième titre"
+        // ];
+
+        $posts = Post::all();
 
         //passer un tableau dans la vue grace a compact
         // return view('articles', compact('posts'));
@@ -51,16 +54,12 @@ class PostController extends Controller
 
     public function show($id)
     {
-        $posts = [
-            1 => "Mon super premier titre 1",
-            2 => "Mon super deuxième titre 2",
-            3 => "Mon super troisième titre 3"
-        ];
-
-        $post = $posts[$id] ?? 'Pas de post trouvé';
+        //on recupere de notre model Post.php
+        $posts =  Post::all(); // ::all() permet de recuperer tout les posts de la base de donnees
+        // dd($posts); // dd permet de debuger le code
 
         return view('article', [
-            'post' => $post
+            'post' => $posts
 
         ]);
     }
