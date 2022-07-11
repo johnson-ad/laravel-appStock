@@ -48,4 +48,25 @@ class PostController extends Controller
             'posts' => $posts
         ]);
     }
+
+    public function show($id)
+    {
+        $posts = [
+            1 => "Mon super premier titre 1",
+            2 => "Mon super deuxième titre 2",
+            3 => "Mon super troisième titre 3"
+        ];
+
+        $post = $posts[$id] ?? 'Pas de post trouvé';
+
+        return view('article', [
+            'post' => $post
+
+        ]);
+    }
+
+    public function contact()
+    {
+        return view('contact');
+    }
 }

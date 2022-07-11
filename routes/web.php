@@ -13,12 +13,19 @@ use App\Http\Controllers\PostController;
 |
 */
 
+// This is the default route
 // Route::get('/', function () {
 //     return view('articles');
-// }); // This is the default route
-// Route::get('/', 'App\Http\Controllers\PostController@index'); // This is the default route
-Route::get('/', [PostController::class, 'index']);
+// }); 
 
+// Route grace namespaces (voir ligne 4 )
+// Route::get('/', 'App\Http\Controllers\PostController@index'); 
+Route::get('/', [PostController::class, 'index']);
+Route::get('/posts/{id}', [PostController::class, 'show'])->whereNumber('id');
+// on peut mettre un regex pour le parametre id avec whereNumber permet de restreindre l'id a un nombre si passe une chaine de caractere on va voir une erreur
+Route::get('/contact', [PostController::class, 'contact']);
+
+//reponse format json [ grace a la methode response() ]
 // Route::get('/posts', function () {
 //     return response()->json([
 //         'posts' => [
@@ -27,6 +34,7 @@ Route::get('/', [PostController::class, 'index']);
 //         ]
 //     ]);
 // });
+
 
 // Route::get('articles', function () {
 //     return view('articles');
