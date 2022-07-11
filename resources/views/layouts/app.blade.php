@@ -7,6 +7,8 @@
     <title>Mon super site</title>
 </head>
 <body>
+    <!--include permet d'appeler des composant bien specifique -->
+    @include('partials.navbar')
     <!-- le @ yield permet d'indiquer kon aura des contenuent dynamique -->
     @yield('content')
 </body>
