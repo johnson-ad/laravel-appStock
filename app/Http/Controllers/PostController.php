@@ -100,4 +100,21 @@ class PostController extends Controller
         ]);
         dd('Post créé');
     }
+
+    public function edit(Request $request)
+    {
+        $post = new Post();
+        // $post->title = $request->title;
+        // $post->content = $request->content;
+        // $post->save();
+
+        $post = Post::find(1);
+        $post->update([
+            'title' => $request->title,
+            'content' =>  $request->content
+        ]);
+        return view('form', [
+            'post' => $post
+        ]);
+    }
 }

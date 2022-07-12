@@ -25,6 +25,7 @@ use App\Http\Controllers\UserController;
 // name permet de nommer une route 
 Route::get('/', [PostController::class, 'index'])->name('home');
 
+Route::post('/posts/edit', [PostController::class, 'edit'])->name('posts.edit');
 Route::get('/posts/create', [PostController::class, 'create'])->name('posts.create');
 Route::post('/posts/create', [PostController::class, 'store'])->name('posts.store'); // pour envoyer des donnees a la base de donnees depui un formulaire
 Route::get('/posts/{id}', [PostController::class, 'show'])->name('posts.show');
