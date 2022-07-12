@@ -103,18 +103,13 @@ class PostController extends Controller
 
     public function edit(Request $request)
     {
-        $post = new Post();
-        // $post->title = $request->title;
-        // $post->content = $request->content;
-        // $post->save();
-
-        $post = Post::find(1);
+        $post =  Post::findOrFail(3);
         $post->update([
             'title' => $request->title,
             'content' =>  $request->content
         ]);
-        return view('form', [
-            'post' => $post
+        return view('edit', [
+            'edit' => $post
         ]);
     }
 }
