@@ -55,8 +55,14 @@ class PostController extends Controller
     public function show($id)
     {
         //on recupere de notre model Post.php
-        $posts =  Post::all(); // ::all() permet de recuperer tout les posts de la base de donnees
+        //$posts =  Post::all(); // ::all() permet de recuperer tout les posts de la base de donnees
         // dd($posts); // dd permet de debuger le code
+
+        // find permet de recuperer un post a partir de son id
+        //$posts =  Post::find($id);
+
+        //fonctione comme find mais la seul difference est que si on ne trouve pas de post on va voir une erreur 404
+        $posts =  Post::findOrFail($id);
 
         return view('article', [
             'post' => $posts
@@ -67,5 +73,10 @@ class PostController extends Controller
     public function contact()
     {
         return view('contact');
+    }
+
+    public function create()
+    {
+        return view('form');
     }
 }
