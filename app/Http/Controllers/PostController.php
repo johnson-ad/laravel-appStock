@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Post;
-use Illuminate\Http\Request;
+use Illuminate\Http\Request; //utiliser pour recuperer les donnees de la requete http
 
 class PostController extends Controller
 {
@@ -78,5 +78,26 @@ class PostController extends Controller
     public function create()
     {
         return view('form');
+    }
+
+    public function store(Request $request) // voir ligne 6
+    {
+        //on peu directement recuperer les donnees de la requete ex: $request->title // permet de recupere le titre de la requete
+        // dd($request->title);
+
+        // creation d une new post methode 1
+        // $post = new Post();
+        // $post->title = $request->title;
+        // $post->content = $request->content;
+        // $post->save(); // permet de sauvegarder le post dans la base de donnees
+        // dd('Post créé');
+
+        // creation d une new post methode 2
+        //concernant la methode 2 il faut aller dans le model Post et creer une variable protected $fillable et lui passe les data kon va recuperer dans le controller pour pouvoir creer
+        Post::create([
+            'title' => $request->title,
+            'content' => $request->content
+        ]);
+        dd('Post créé');
     }
 }

@@ -24,12 +24,21 @@ use App\Http\Controllers\UserController;
 // Route grace namespaces (voir ligne 4 )
 // name permet de nommer une route 
 Route::get('/', [PostController::class, 'index'])->name('home');
+
 Route::get('/posts/create', [PostController::class, 'create'])->name('posts.create');
+Route::post('/posts/create', [PostController::class, 'store'])->name('posts.store'); // pour envoyer des donnees a la base de donnees depui un formulaire
 Route::get('/posts/{id}', [PostController::class, 'show'])->name('posts.show');
 // on peut mettre un regex pour le parametre id avec whereNumber permet de restreindre l'id a un nombre si passe une chaine de caractere on va voir une erreur
 Route::get('/contact', [PostController::class, 'contact'])->name('contact');
+
 Route::get('/produit', [ProduitController::class, 'produit'])->name('produit');
+Route::get('/produit/create', [ProduitController::class, 'create'])->name('produit.create');
+Route::post('/produit/create', [ProduitController::class, 'store'])->name('produit.store');
+
 Route::get('/categorie', [CategorieController::class, 'categorie'])->name('categorie');
+Route::get('/categorie/create', [CategorieController::class, 'create'])->name('categorie.create');
+Route::post('/categorie/create', [CategorieController::class, 'store'])->name('categorie.store');
+
 Route::get('/user', [UserController::class, 'user'])->name('user');
 
 //reponse format json [ grace a la methode response() ]
