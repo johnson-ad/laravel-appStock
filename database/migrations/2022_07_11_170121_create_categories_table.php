@@ -17,10 +17,13 @@ return new class extends Migration
             $table->id();
             $table->string('nom');
             $table->timestamps();
+            // $table->unsignedBigInteger('product_id');
+            // $table->foreign('product_id')->references('id')->on('produits');
         });
     }
 
     /**
+     * 
      * Reverse the migrations.
      *
      * @return void

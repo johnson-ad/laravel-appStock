@@ -18,8 +18,8 @@ class UserFactory extends Factory
     public function definition()
     {
         return [
-            'name' => fake()->name(),
-            'firstname' => fake()->firstName(),
+            'nom' => fake()->name(),
+            'prenom' => fake()->firstName(),
             'email' => fake()->safeEmail(),
             'email_verified_at' => now(),
             'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi',
@@ -27,6 +27,8 @@ class UserFactory extends Factory
             'remember_token' => Str::random(10),
         ];
     }
+    // php artisan tinker
+    //User::factory()->count(10)->create();
 
     /**
      * Indicate that the model's email address should be unverified.

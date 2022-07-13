@@ -17,6 +17,10 @@ return new class extends Migration
             $table->id();
             $table->mediumText('content');
             $table->timestamps();
+
+            //creation d'un key etrangere
+            $table->unsignedBigInteger('post_id');
+            $table->foreign('post_id')->references('id')->on('posts');
         });
     }
 

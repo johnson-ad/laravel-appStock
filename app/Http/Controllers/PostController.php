@@ -98,12 +98,13 @@ class PostController extends Controller
             'title' => $request->title,
             'content' => $request->content
         ]);
-        dd('Post créé');
+
+        return redirect('/');
     }
 
     public function edit(Request $request)
     {
-        $post =  Post::findOrFail(3);
+        $post =  Post::findOrFail(1);
         $post->update([
             'title' => $request->title,
             'content' =>  $request->content

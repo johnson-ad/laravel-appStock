@@ -8,4 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class Entree extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'quantite',
+        'prix',
+        'date'
+    ];
 }

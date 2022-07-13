@@ -37,12 +37,16 @@ Route::get('/contact', [PostController::class, 'contact'])->name('contact');
 Route::get('/produit', [ProduitController::class, 'produit'])->name('produit');
 Route::get('/produit/create', [ProduitController::class, 'create'])->name('produit.create');
 Route::post('/produit/create', [ProduitController::class, 'store'])->name('produit.store');
+// Route::get('/produit/create', [ProduitController::class, 'store'])->name('produit.store');
 
 Route::get('/categorie', [CategorieController::class, 'categorie'])->name('categorie');
 Route::get('/categorie/create', [CategorieController::class, 'create'])->name('categorie.create');
 Route::post('/categorie/create', [CategorieController::class, 'store'])->name('categorie.store');
 
 Route::get('/user', [UserController::class, 'user'])->name('user');
+Route::get('/user/show', [UserController::class, 'show'])->name('show.user');
+Route::get('/user/create', [UserController::class, 'create'])->name('create.user');
+Route::post('/user/create', [UserController::class, 'store'])->name('user.store');
 
 //reponse format json [ grace a la methode response() ]
 // Route::get('/posts', function () {
