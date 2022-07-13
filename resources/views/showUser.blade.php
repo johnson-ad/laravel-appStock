@@ -2,9 +2,9 @@
 
 @section('content')
 
-    <table class="table row-5 m-5">
+    <table class="table  table-hover table-sm m-5">
         <thead>
-        <tr>
+        <tr class="table-active ">
             <th scope="col">Nom</th>
             <th scope="col">Prenom</th>
             <th scope="col">Email</th>
@@ -12,7 +12,6 @@
         </thead>
         <tbody>
     @foreach ($users as $user)   
-
         <tr>
             <td>{{ $user->nom}}</td>
             <td>{{ $user->prenom}}</td>

@@ -14,19 +14,20 @@
             <a class="nav-link active" aria-current="page" href="{{route('home')}}">Home</a>
           </li>
           <li class="nav-item">
+            <a class="nav-link" href="{{route('posts.create')}}">New post</a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link" href="{{route('produit')}}">Produit</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="{{route('categorie')}}">Categorie</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{{route('contact')}}">Contact</a>
-          </li>
-          <li class="nav-item">
             <a class="nav-link" href="{{route('user')}}">User</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{{route('posts.create')}}">Creer un new post</a>
+            <li class="nav-item">
+              <a class="nav-link" href="{{route('contact')}}">Contact</a>
+            </li>
           </li>
         </ul>
         <button class="btn btn-lg-5 btn-danger me-2"  type="button">Sign out <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-left" viewBox="0 0 16 16">

@@ -8,7 +8,7 @@
         <input type="text" name="nom" class="form-control" required placeholder="Entrer le nom">
       </div>
     <div class="m-3 col-6">
-        <label for="exampleFormControlInput1" class="form-label">Prenomm </label>
+        <label for="exampleFormControlInput1" class="form-label">Prenom</label>
         <input type="text" name="prenom" class="form-control" required placeholder="Entrer le prenom">
       </div>
     <div class="m-3 col-6">
